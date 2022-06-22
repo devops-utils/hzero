@@ -1,5 +1,5 @@
 ```shell
-
+kubectl create ns storage
 ```
 
 ```shell

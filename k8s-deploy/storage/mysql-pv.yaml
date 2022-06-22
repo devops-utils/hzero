@@ -1,20 +1,4 @@
 apiVersion: v1
-kind: PersistentVolume
-metadata:
-  labels:
-    pv: mysql-pv
-    app: mysql
-  name: mysql
-spec:
-  accessModes:
-  - ReadWriteOnce
-  capacity:
-    storage: 3Gi
-  nfs:
-    path: /data/mysql
-    server: 172.23.40.42
----
-apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: mysql-pvc
