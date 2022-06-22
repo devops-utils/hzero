@@ -1,5 +1,8 @@
 ```shell
 kubectl create ns storage
+
+cd k8s-deploy/storage
+kubectl apply -f mysql-pv.yaml -n storage
 ```
 
 ```shell

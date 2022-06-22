@@ -24,7 +24,7 @@ spec:
   ports:
   - port: 3306
     targetPort: 3306
-    nodePort: 3306
+    nodePort: 3307
     protocol: TCP
 ---
 kind: Deployment
@@ -49,7 +49,7 @@ spec:
           protocol: TCP
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: hzero@hand
+          value: root
         - name: TZ
           value: Asia/Shanghai
         volumeMounts:
