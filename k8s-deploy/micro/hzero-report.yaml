@@ -1,0 +1,46 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hzero-report
+  labels:
+    app: report
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: report
+  template:
+    metadata:
+      labels:
+        app: report
+    spec:
+      containers:
+      - name: hzero-report
+        image: registry.cn-hangzhou.aliyuncs.com/openhand/hzero-report:v1.4.4
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8210
+          name: report
+        env: 
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:mysql://mysql.storage:3306/hzero_report?useUnicode=true&characterEncoding=utf-8&useSSL=false
+        - name: SPRING_DATASOURCE_USERNAME
+          value: hzero
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: hzero2020.
+        - name: SPRING_REDIS_HOST
+          value: redis.storage
+        - name: EUREKA_DEFAULT_ZONE
+          value: http://hzero-register.hzero:8000/eureka
+        - name: SPRING_CLOUD_CONFIG_URI
+          value: http://hzero-config:8010
+        - name: JAVA_OPTS
+          value: -Xms512m -Xmx1024m 
+        resources:
+          limits:
+            memory: 2Gi
+          requests:
+            memory: 1Gi
+      imagePullSecrets:
+        - name: registry-secret

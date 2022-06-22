@@ -1,0 +1,64 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hzero-register
+  labels:
+    app: register
+spec:
+  type: ClusterIP
+  ports:
+  - name: register
+    port: 8000
+    targetPort: 8000
+    protocol: TCP
+  selector:
+    app: register
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hzero-register
+  labels:
+    app: register
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: register
+  template:
+    metadata:
+      labels:
+        app: register
+    spec:
+      containers:
+      - name: hzero-register
+        image: registry.cn-hangzhou.aliyuncs.com/openhand/hzero-register:v1.4.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8000
+          protocol: TCP
+        env: 
+        - name: JAVA_OPTS
+          value: -Xms512m -Xmx1024m 
+        resources:
+          limits:
+            memory: 2Gi
+          requests:
+            memory: 1Gi
+      imagePullSecrets:
+        - name: registry-secret
+        
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hzero-register
+spec:
+  rules:
+  - host: register.hzero.org
+    http:
+      paths:
+      - backend:
+          serviceName: hzero-register
+          servicePort: 8000

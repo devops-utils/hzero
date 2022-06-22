@@ -1,0 +1,53 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hzero-admin
+  labels:
+    app: admin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: admin
+  template:
+    metadata:
+      labels:
+        app: admin
+    spec:
+      containers:
+      - name: hzero-admin
+        image: registry.cn-hangzhou.aliyuncs.com/openhand/hzero-admin:v1.4.3
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8060
+          name: admin
+        env: 
+        # 数据库地址
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:mysql://mysql.storage:3306/hzero_admin?useUnicode=true&characterEncoding=utf-8&useSSL=false
+        # 数据库用户名
+        - name: SPRING_DATASOURCE_USERNAME
+          value: hzero
+        # 数据密码
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: hzero2020.
+        # redis地址
+        - name: SPRING_REDIS_HOST
+          value: redis.storage
+        # 注册中心地址
+        - name: EUREKA_DEFAULT_ZONE
+          value: http://hzero-register.hzero:8000/eureka
+        # 配置中心地址
+        - name: SPRING_CLOUD_CONFIG_URI
+          value: http://hzero-config.hzero:8010
+        # java启动参数
+        - name: JAVA_OPTS
+          value: -Xms512m -Xmx1024m
+        resources:
+          limits:
+            memory: 2Gi
+          requests:
+            memory: 1Gi
+      imagePullSecrets:
+        - name: registry-secret

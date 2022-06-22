@@ -1,0 +1,68 @@
+---
+apiVersion: v1
+data:
+  my.cnf: |-
+    [mysqld]
+    lower_case_table_names=1
+    character_set_server=utf8
+    max_connections=1000
+    sql_mode=""
+    max_allowed_packet=50M
+    innodb_file_per_table=1
+kind: ConfigMap
+metadata:
+  name: mysql-config
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: mysql
+spec:
+  type: NodePort
+  selector:
+    app: mysql
+  ports:
+  - port: 3306
+    targetPort: 3306
+    nodePort: 3306
+    protocol: TCP
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - name: mysql
+        image: hub.baidubce.com/yanqian-tools/mysql:5.7.26
+        ports:
+        - containerPort: 3306
+          protocol: TCP
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: hzero@hand
+        - name: TZ
+          value: Asia/Shanghai
+        volumeMounts:
+        - mountPath: "/var/lib/mysql"
+          name: mysql-data
+        - mountPath: "/etc/mysql/conf.d/my.cnf"
+          name: config-volume
+          subPath: my.cnf
+      volumes:
+      - name: mysql-data
+        persistentVolumeClaim:
+          claimName: mysql-pvc
+      - name: config-volume
+        configMap:
+          name: mysql-config
+          defaultMode: 420
