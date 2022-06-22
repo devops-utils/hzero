@@ -4,6 +4,9 @@ kubectl create ns storage
 cd k8s-deploy/storage
 kubectl apply -f mysql-pv.yaml -n storage
 kubectl apply -f mysql-deploy.yaml -n storage
+
+sudo docker pull hub.baidubce.com/yanqian-tools/mysql:5.7.26
+https://hub.baidubce.com
 ```
 
 ```shell
