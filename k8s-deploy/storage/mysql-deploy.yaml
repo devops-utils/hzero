@@ -43,7 +43,7 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: registry.baidubce.com/yanqian-tools/mysql:5.7.26
+        image: hub.baidubce.com/yanqian-tools/mysql:5.7.26
         ports:
         - containerPort: 3306
           protocol: TCP
