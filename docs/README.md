@@ -22,4 +22,7 @@ https://open.hand-china.com/document-center/doc/product/10067/10032?doc_id=6291&
 https://open.hand-china.com/document-center/doc/product/10067/10032?doc_id=6292&doc_code=6292
 环境基础配置
 https://open.hand-china.com/document-center/doc/product/10067/10032?doc_id=6383&doc_code=6383
+
+https://cloud.baidu.com/doc/CCE/s/Yjxppt74z
+https://cloud.baidu.com/doc/CCR/s/Xkgvy3ixr
 ```
