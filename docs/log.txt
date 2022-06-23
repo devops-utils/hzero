@@ -20,3 +20,43 @@ NAME    TYPE       CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
 minio   NodePort   172.20.221.131   <none>        9000:30004/TCP   2m19s
 mysql   NodePort   172.20.72.164    <none>        3306:30001/TCP   34m
 redis   NodePort   172.20.125.239   <none>        6379:30002/TCP   12m
+
+sh database-init.sh
+
+HZERO 1.4 更新开始..............
+
+
+启动工具...
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.2.RELEASE)
+
+2022-06-23 15:57:49.766  INFO 26303 --- [           main] o.hzero.installer.InstallerApplication   : Starting InstallerApplication v0.2.0.RELEASE on h1.corp.sz.gene.com with PID 26303 (/home/zhangchunsheng/git/hzero/hzero-resource/hzero-tool-data-install.jar started by zhangchunsheng in /home/zhangchunsheng/git/hzero/hzero-resource)
+2022-06-23 15:57:49.770  INFO 26303 --- [           main] o.hzero.installer.InstallerApplication   : No active profile set, falling back to default profiles: default
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.codehaus.groovy.vmplugin.v7.Java7$1 (jar:file:/home/zhangchunsheng/git/hzero/hzero-resource/hzero-tool-data-install.jar!/BOOT-INF/lib/groovy-2.5.8.jar!/) to constructor java.lang.invoke.MethodHandles$Lookup(java.lang.Class,int)
+WARNING: Please consider reporting this to the maintainers of org.codehaus.groovy.vmplugin.v7.Java7$1
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2022-06-23 15:57:51.405  INFO 26303 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8099 (http)
+2022-06-23 15:57:51.434  INFO 26303 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-23 15:57:51.435  INFO 26303 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2022-06-23 15:57:51.508  INFO 26303 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-23 15:57:51.508  INFO 26303 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in
+1248 ms
+Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
+2022-06-23 15:57:52.024  INFO 26303 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-23 15:57:52.226  WARN 26303 --- [           main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2022-06-23 15:57:52.436  INFO 26303 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-23 15:57:52.598  INFO 26303 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-06-23 15:57:53.082  INFO 26303 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8099 (http) with context path ''
+2022-06-23 15:57:53.084  INFO 26303 --- [           main] o.hzero.installer.InstallerApplication   : Started InstallerApplication in 6.888 seconds (JVM running for 8.329)
+2022-06-23 15:57:53.128  INFO 26303 --- [           main] org.hzero.installer.utils.XmlUtils       : service-mapping.xml <<< File parsing successful
+============================================================================
+Please visit ---> http://10.50.10.20:8099/install.html
+============================================================================
