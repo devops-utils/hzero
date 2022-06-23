@@ -14,6 +14,9 @@ kubectl apply -f minio-deploy.yaml -n storage
 kubectl get po -n storage
 kubectl get svc -n storage
 
+mysql -h127.0.0.1 -uroot -p -P30001
+root
+
 kubectl delete -f mysql-deploy.yaml -n storage
 
 sudo docker login --username=test hub.baidubce.com
