@@ -60,3 +60,13 @@ Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class 
 ============================================================================
 Please visit ---> http://10.50.10.20:8099/install.html
 ============================================================================
+
+kubectl get service -n hzero
+NAME             TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+hzero-gateway    ClusterIP   172.20.78.64     <none>        8080/TCP   61m
+hzero-register   ClusterIP   172.20.105.225   <none>        8000/TCP   78m
+
+kubectl get ingress -n hzero
+NAME             CLASS    HOSTS                 ADDRESS       PORTS   AGE
+hzero-gateway    <none>   gateway.7otech.com    10.50.10.19   80      62m
+hzero-register   <none>   register.7otech.com   10.50.10.19   80      78m
