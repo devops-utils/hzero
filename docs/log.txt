@@ -70,3 +70,32 @@ kubectl get ingress -n hzero
 NAME             CLASS    HOSTS                 ADDRESS       PORTS   AGE
 hzero-gateway    <none>   gateway.7otech.com    10.50.10.19   80      62m
 hzero-register   <none>   register.7otech.com   10.50.10.19   80      78m
+
+kubectl get po -n hzero
+NAME                              READY   STATUS    RESTARTS   AGE
+hzero-admin-5bc69bc4c7-jkvmv      1/1     Running   0          106m
+hzero-config-79c99844d4-wk9wj     1/1     Running   0          113m
+hzero-file-75cdcfdb6f-p9582       1/1     Running   0          97m
+hzero-front-7fd88cfbc-njl5t       1/1     Running   0          2m51s
+hzero-gateway-6f4b9687-64v4m      1/1     Running   0          104m
+hzero-iam-5788b7db4c-gwp27        1/1     Running   0          112m
+hzero-import-8597589fb-wzjk5      1/1     Running   0          74m
+hzero-message-785c45b4dc-brg7v    1/1     Running   0          75m
+hzero-oauth-5cfd9c76d-kbsmp       1/1     Running   0          101m
+hzero-platform-665b566897-trzv7   1/1     Running   0          100m
+hzero-register-597b64b94c-jktgs   1/1     Running   0          121m
+hzero-report-5cc849586-2zghp      1/1     Running   0          68m
+hzero-scheduler-788f55f-x9df8     1/1     Running   0          73m
+hzero-swagger-6d479cd796-fljsm    1/1     Running   0          98m
+
+kubectl get service -n hzero
+NAME             TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+hzero-front      ClusterIP   172.20.234.123   <none>        8848/TCP   13m
+hzero-gateway    ClusterIP   172.20.78.64     <none>        8080/TCP   105m
+hzero-register   ClusterIP   172.20.105.225   <none>        8000/TCP   121m
+
+kubectl get ingress -n hzero
+NAME             CLASS    HOSTS                 ADDRESS       PORTS   AGE
+hzero-front      <none>   front.7otech.com      10.50.10.19   80      14m
+hzero-gateway    <none>   gateway.7otech.com    10.50.10.19   80      105m
+hzero-register   <none>   register.7otech.com   10.50.10.19   80      121m
