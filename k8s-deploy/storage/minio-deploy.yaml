@@ -10,7 +10,7 @@ spec:
   ports:
     - port: 9000
       targetPort: 9000
-      nodePort: 9000
+      nodePort: 30003
       protocol: TCP
       name: http
   selector:
@@ -41,10 +41,10 @@ spec:
       - name: minio
         env:
         - name: "MINIO_ACCESS_KEY"
-          value: "hzero.admin"
+          value: "Rexxar.admin"
         - name: "MINIO_SECRET_KEY"
-          value: "hzero.hand.2020."
-        image: hub.baidubce.com/yanqian-tools/minio:RELEASE.2019-10-12T01-39-57Z
+          value: "Rexxar.2022"
+        image: minio:RELEASE.2019-10-12T01-39-57Z
         imagePullPolicy: IfNotPresent
         args:
           - server
@@ -87,7 +87,7 @@ metadata:
     app: "minio"
 spec:
   rules:
-    - host: oss.hzero.org
+    - host: oss.7otech.com
       http:
         paths:
           - path: /
