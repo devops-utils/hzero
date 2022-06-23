@@ -16,6 +16,11 @@ kubectl get svc -n storage
 
 mysql -h127.0.0.1 -uroot -p -P30001
 root
+mysql -h10.50.10.27 -uroot -p -P30001
+root
+
+cd hzero-resource
+sh database-init.sh
 
 kubectl delete -f mysql-deploy.yaml -n storage
 
