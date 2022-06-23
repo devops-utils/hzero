@@ -68,6 +68,8 @@ BUILD_ENV_SIGN：''，环境标识
     
 kubectl apply -f hzero-front.yaml -n hzero
 
+http://front.7otech.com
+
 kubectl delete -f mysql-deploy.yaml -n storage
 
 sudo docker login --username=test hub.baidubce.com
