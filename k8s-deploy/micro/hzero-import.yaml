@@ -26,9 +26,9 @@ spec:
         - name: SPRING_DATASOURCE_URL
           value: jdbc:mysql://mysql.storage:3306/hzero_import?useUnicode=true&characterEncoding=utf-8&useSSL=false
         - name: SPRING_DATASOURCE_USERNAME
-          value: hzero
+          value: Rexxar
         - name: SPRING_DATASOURCE_PASSWORD
-          value: hzero2020.
+          value: Rexxar2022
         - name: SPRING_REDIS_HOST
           value: redis.storage
         - name: EUREKA_DEFAULT_ZONE

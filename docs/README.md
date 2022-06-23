@@ -29,6 +29,8 @@ update hpfm_tenant set tenant_id=0 where tenant_id=1;
 GRANT ALL PRIVILEGES ON *.* TO 'Rexxar'@'%' IDENTIFIED BY 'Rexxar2022' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 
+kubectl create ns hzero
+
 kubectl delete -f mysql-deploy.yaml -n storage
 
 sudo docker login --username=test hub.baidubce.com
