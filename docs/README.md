@@ -8,6 +8,8 @@ kubectl apply -f mysql-deploy.yaml -n storage
 kubectl apply -f redis-pv.yaml -n storage
 kubectl apply -f redis-deploy.yaml -n storage
 
+kubectl apply -f minio-pv.yaml -n storage
+
 kubectl get po -n storage
 kubectl get svc -n storage
 
