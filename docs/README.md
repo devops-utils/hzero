@@ -56,6 +56,16 @@ http://gateway.7otech.com/swagger/swagger-ui.html
 admin
 Admin@123!
 
+BUILD_BASE_PATH: / ,项目基础路径
+BUILD_API_HOST: 网关地址
+BUILD_CLIENT_ID: Oauth 认证客户端ID
+BUILD_WEBSOCKET_HOST: websocket 地址
+BUILD_CUSTOMIZE_ICON_NAME: ''，客制化图标名称
+BUILD_MULTI_SKIN_ENABLE：true，UED皮肤切换，true为开启
+BUILD_TOP_MENU_UNION_LABEL：false，是否按照标签并集查询(即只要存在一个标签即可), 默认否(false)
+BUILD_TOP_MENU_LABELS：HZERO_MENU，首页菜单标签
+BUILD_ENV_SIGN：''，环境标识
+    
 kubectl apply -f hzero-front.yaml -n hzero
 
 kubectl delete -f mysql-deploy.yaml -n storage
