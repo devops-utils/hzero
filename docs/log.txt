@@ -1,2 +1,10 @@
 sudo docker pull hub.baidubce.com/yanqian-tools/mysql:5.7.26
 Error response from daemon: Get "https://hub.baidubce.com/v2/": net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)
+
+kubectl get po -n storage
+NAME                    READY   STATUS    RESTARTS   AGE
+mysql-994757f97-594jr   1/1     Running   0          13m
+
+kubectl get svc -n storage
+NAME    TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+mysql   NodePort   172.20.72.164   <none>        3306:30001/TCP   12m
