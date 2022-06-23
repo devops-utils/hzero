@@ -7,7 +7,7 @@ kubectl apply -f mysql-deploy.yaml -n storage
 kubectl delete -f mysql-deploy.yaml -n storage
 
 sudo docker pull hub.baidubce.com/yanqian-tools/mysql:5.7.26
-sudo docker pull hub.baidubce.com/yanqian-tools/mysql:5.7.26
+sudo docker pull registry.baidubce.com/yanqian-tools/mysql:5.7.26
 https://hub.baidubce.com
 ```
 
