@@ -49,6 +49,15 @@ kubectl get po -n hzero
 kubectl get service -n hzero
 kubectl get ingress -n hzero
 
+http://gateway.7otech.com
+http://register.7otech.com
+http://gateway.7otech.com/swagger/swagger-ui.html
+
+admin
+Admin@123!
+
+kubectl apply -f hzero-front.yaml -n hzero
+
 kubectl delete -f mysql-deploy.yaml -n storage
 
 sudo docker login --username=test hub.baidubce.com
