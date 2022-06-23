@@ -8,3 +8,15 @@ mysql-994757f97-594jr   1/1     Running   0          13m
 kubectl get svc -n storage
 NAME    TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
 mysql   NodePort   172.20.72.164   <none>        3306:30001/TCP   12m
+
+kubectl get po -n storage
+NAME                     READY   STATUS    RESTARTS   AGE
+minio-c6547fbc6-8r7h2    1/1     Running   0          114s
+mysql-994757f97-594jr    1/1     Running   0          33m
+redis-84bcdd9d8d-tjkdn   1/1     Running   0          11m
+
+kubectl get svc -n storage
+NAME    TYPE       CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+minio   NodePort   172.20.221.131   <none>        9000:30004/TCP   2m19s
+mysql   NodePort   172.20.72.164    <none>        3306:30001/TCP   34m
+redis   NodePort   172.20.125.239   <none>        6379:30002/TCP   12m
