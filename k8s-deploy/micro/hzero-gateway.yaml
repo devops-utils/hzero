@@ -70,7 +70,7 @@ metadata:
   name: hzero-gateway
 spec:
   rules:
-  - host: gateway.hzero.org
+  - host: gateway.7otech.com
     http:
       paths:
       - backend:

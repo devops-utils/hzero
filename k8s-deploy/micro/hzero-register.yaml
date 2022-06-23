@@ -56,7 +56,7 @@ metadata:
   name: hzero-register
 spec:
   rules:
-  - host: register.hzero.org
+  - host: register.7otech.com
     http:
       paths:
       - backend:

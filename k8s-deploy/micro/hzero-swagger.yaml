@@ -38,7 +38,7 @@ spec:
         - name: HZERO_SWAGGER_BASE_URL
           value: http://172.23.40.42:30880
         - name: HZERO_GATEWAY_DOMAIN
-          value: gateway.hzero.com.cn
+          value: gateway1.7otech.com
         - name: JAVA_OPTS
           value: -Xms512m -Xmx1024m 
         resources:

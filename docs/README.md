@@ -31,6 +31,24 @@ FLUSH PRIVILEGES;
 
 kubectl create ns hzero
 
+kubectl apply -f hzero-register.yaml -n hzero
+kubectl apply -f hzero-config.yaml -n hzero
+kubectl apply -f hzero-iam.yaml -n hzero
+kubectl apply -f hzero-admin.yaml -n hzero
+kubectl apply -f hzero-gateway.yaml -n hzero
+kubectl apply -f hzero-oauth.yaml -n hzero
+kubectl apply -f hzero-platform.yaml -n hzero
+kubectl apply -f hzero-swagger.yaml -n hzero
+kubectl apply -f hzero-file.yaml -n hzero
+kubectl apply -f hzero-message.yaml -n hzero
+kubectl apply -f hzero-import.yaml -n hzero
+kubectl apply -f hzero-scheduler.yaml -n hzero
+kubectl apply -f hzero-report.yaml -n hzero
+
+kubectl get po -n hzero
+kubectl get service -n hzero
+kubectl get ingress -n hzero
+
 kubectl delete -f mysql-deploy.yaml -n storage
 
 sudo docker login --username=test hub.baidubce.com

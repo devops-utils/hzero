@@ -37,9 +37,9 @@ spec:
           name: front
         env: 
           - name: BUILD_API_HOST
-            value: http://gateway.hzero.org
+            value: http://gateway.7otech.com
           - name: BUILD_WEBSOCKET_HOST
-            value: http://gateway.hzero.org/hpfm/sock-js
+            value: http://gateway.7otech.com/hpfm/sock-js
           - name: BUILD_CLIENT_ID
             value: hzero-front-uat
           - name: BUILD_ENV_SIGN
@@ -58,7 +58,7 @@ metadata:
   name: hzero-front
 spec:
   rules:
-  - host: front.hzero.org
+  - host: front.7otech.com
     http:
       paths:
       - backend:
