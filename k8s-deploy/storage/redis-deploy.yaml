@@ -20,7 +20,7 @@ spec:
         app: redis
     spec:
       containers:
-      - image: hub.baidubce.com/yanqian-tools/redis:4.0.2
+      - image: redis:4.0.2
         imagePullPolicy: Always
         name: redis
         ports:
@@ -48,7 +48,7 @@ spec:
   - port: 6379
     protocol: TCP
     targetPort: 6379
-    nodePort: 6379
+    nodePort: 30002
   selector:
     app: redis
   type: NodePort
