@@ -1,0 +1,2 @@
+sudo docker pull hub.baidubce.com/yanqian-tools/mysql:5.7.26
+Error response from daemon: Get "https://hub.baidubce.com/v2/": net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)
