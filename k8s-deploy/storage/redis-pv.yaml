@@ -1,19 +1,4 @@
 apiVersion: v1
-kind: PersistentVolume
-metadata:
-  labels:
-    pv: redis-pv
-  name: redis-pv
-spec:
-  accessModes:
-  - ReadWriteOnce
-  capacity:
-    storage: 2Gi
-  nfs:
-    path: /data/redis
-    server: 172.23.40.42
----
-apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: redis-pvc
