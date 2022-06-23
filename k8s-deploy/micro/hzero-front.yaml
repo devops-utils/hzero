@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: hzero-front
-        image: registry.cn-hangzhou.aliyuncs.com/openhand/hzero-front:v1.4.1
+        image: registry.cn-hangzhou.aliyuncs.com/openhand/hzero-front:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
