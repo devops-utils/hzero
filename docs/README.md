@@ -53,9 +53,6 @@ http://gateway.7otech.com
 http://register.7otech.com
 http://gateway.7otech.com/swagger/swagger-ui.html
 
-admin
-Admin@123!
-
 BUILD_BASE_PATH: / ,项目基础路径
 BUILD_API_HOST: 网关地址
 BUILD_CLIENT_ID: Oauth 认证客户端ID
@@ -69,6 +66,8 @@ BUILD_ENV_SIGN：''，环境标识
 kubectl apply -f hzero-front.yaml -n hzero
 
 http://front.7otech.com
+admin
+Admin@123!
 
 kubectl delete -f mysql-deploy.yaml -n storage
 
