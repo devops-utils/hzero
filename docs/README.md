@@ -21,6 +21,10 @@ root
 
 cd hzero-resource
 sh database-init.sh
+# 数据初始化完成后需要进入hzero_platform数据库下面的hpfm_tenant表中，将tenant_id手动置为0
+use hzero_platform
+select * from hpfm_tenant;
+update hpfm_tenant set tenant_id=0 where tenant_id=1;
 
 kubectl delete -f mysql-deploy.yaml -n storage
 
