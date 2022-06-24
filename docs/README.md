@@ -69,6 +69,22 @@ http://front.7otech.com
 admin
 Admin@123!
 
+kubectl delete -f hzero-front.yaml -n hzero
+
+kubectl delete -f hzero-register.yaml -n hzero
+kubectl delete -f hzero-config.yaml -n hzero
+kubectl delete -f hzero-iam.yaml -n hzero
+kubectl delete -f hzero-admin.yaml -n hzero
+kubectl delete -f hzero-gateway.yaml -n hzero
+kubectl delete -f hzero-oauth.yaml -n hzero
+kubectl delete -f hzero-platform.yaml -n hzero
+kubectl delete -f hzero-swagger.yaml -n hzero
+kubectl delete -f hzero-file.yaml -n hzero
+kubectl delete -f hzero-message.yaml -n hzero
+kubectl delete -f hzero-import.yaml -n hzero
+kubectl delete -f hzero-scheduler.yaml -n hzero
+kubectl delete -f hzero-report.yaml -n hzero
+
 kubectl delete -f mysql-deploy.yaml -n storage
 
 sudo docker login --username=test hub.baidubce.com
