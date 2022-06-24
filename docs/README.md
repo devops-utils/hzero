@@ -69,6 +69,10 @@ http://front.7otech.com
 admin
 Admin@123!
 
+http://oss.7otech.com:30004/
+Rexxar.admin
+Rexxar.2022
+
 kubectl delete -f hzero-front.yaml -n hzero
 
 kubectl delete -f hzero-register.yaml -n hzero
